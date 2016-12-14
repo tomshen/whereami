@@ -1,11 +1,15 @@
 #!/usr/bin/env nodejs
 
+let cors = require("cors");
 let express = require("express");
 let https = require("https");
 
 let config = require("./config.json");
 
 let app = express();
+app.use(cors({
+    origin: "http://www.tomshen.me"
+}));
 
 app.get("/", (req, res) => {
     let requestUrl = `https://api.foursquare.com/v2/users/self/checkins`;
