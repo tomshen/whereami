@@ -29,7 +29,11 @@ app.get("/", (req, res) => {
                 let latestCheckin = data.response.checkins.items[0];
 
                 let location = latestCheckin.location || latestCheckin.venue.location;
-                res.send(location);
+                res.send({
+                    city: location.city,
+                    country: location.country,
+                    state: location.state
+                });
             } catch(err) {
                 console.error(err);
             }
