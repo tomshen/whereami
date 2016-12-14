@@ -8,7 +8,7 @@ let config = require("./config.json");
 
 let app = express();
 app.use(cors({
-    origin: "http://www.tomshen.me"
+    origin: config.origin || "*"
 }));
 
 app.get("/", (req, res) => {
