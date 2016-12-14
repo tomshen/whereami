@@ -1,3 +1,5 @@
+#!/usr/bin/env nodejs
+
 let express = require("express");
 let https = require("https");
 
